@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.subwayAlarm.board.BoardMapper">
+	<select id="getAllBoardCount" resultType="java.lang.Integer">
+		select count(*) from sub_member, board where sm_id = b_owner
+	</select>
+	<insert id="regBoardWrite" parameterType="com.kang.subwayAlarm.board.Board">
+		insert into board values(
+		board_seq.nextval, #{b_title}, #{b_owner}, sysdate, sysdate, #{b_txt}, #{b_viewcnt}, #{b_good}, #{b_likeCheck})
+	</insert>
+	<select id="getSearchBoardCount" parameterType="com.kang.subwayAlarm.board.BoardSelector" 
+		resultType="java.lang.Integer">
+		select count(*) from sub_member, board
+		where sm_id = b_owner
+		and (b_title like '%'||#{search}||'%' or sm_id like '%'||#{search}||'%')
+	</select>
+	<select id="getBoard" parameterType="com.kang.subwayAlarm.board.BoardSelector"
+		resultType="com.kang.subwayAlarm.board.Board">
+		select * from (
+	    	select rownum as rn, sm_id, sm_photo, b_no, b_title, b_owner, b_when, b_updateWhen, b_txt, b_viewcnt, b_good
+	    	from ( select * from sub_member, board
+				where sm_id = b_owner
+				and (b_title like '%'||#{search}||'%' or sm_id like '%'||#{search}||'%')
+				order by b_when desc )
+	    )
+		where rn &gt;= #{start} and rn &lt;= #{end}
+	</select>
+	<select id="boardDetail" resultType="com.kang.subwayAlarm.board.Board">
+		select b_no, b_title, b_owner, b_when, b_updateWhen, b_txt, b_viewcnt, b_good, b_likeCheck
+		from board where b_no = #{b_no}
+	</select>
+	<update id="boardGoodCount" parameterType="com.kang.subwayAlarm.board.Board">
+		update board set b_good = b_good + 1, b_likeCheck = 1
+		where b_no = #{b_no} 
+	</update>
+	<update id="boardGoodCountReset" parameterType="com.kang.subwayAlarm.board.Board">
+		update board set b_good = b_good - 1, b_likeCheck = 0
+		where b_no = #{b_no}
+	</update>
+	<delete id="boardDelete" parameterType="com.kang.subwayAlarm.board.Board">
+		delete from board where b_no = #{b_no}
+	</delete>
+	<update id="boardViews" parameterType="int">
+		update board set b_viewcnt = b_viewcnt + 1
+		where b_no = #{b_no}
+	</update>
+	<update id="boardUpdate" parameterType="com.kang.subwayAlarm.board.Board">
+		update board
+		set b_txt = #{b_txt}, b_updateWhen = sysdate
+		where b_no = #{b_no}
+	</update>
+	<insert id="regReply" parameterType="com.kang.subwayAlarm.board.Reply">
+		insert into reply values(
+		reply_seq.nextval, #{r_b_no}, #{r_owner}, #{r_txt}, sysdate)
+	</insert>
+	<select id="replyList" resultType="com.kang.subwayAlarm.board.Reply">
+		select r_no, r_b_no, r_owner, r_txt, r_when
+		from reply 
+		where r_b_no = #{r_b_no} 
+		order by r_when
+	</select>
+	<delete id="replyDelete" parameterType="com.kang.subwayAlarm.board.Reply">
+		delete from reply where r_no = #{r_no}
+	</delete>
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.subwayAlarm.subway.SubwayMapper">
+	<select id="AllSubwayInfo" resultType="java.lang.Integer">
+		select count(*) from sub_Info order by recptnDt
+	</select>
+	<insert id="insertSubway" parameterType="com.kang.subwayAlarm.subway.Subway">
+		insert into sub_Info values(
+		#{btrainNo}, #{statnNm}, #{trnsitCo}, #{btrainSttus}, #{barvlDt}, #{bstatnNm}, #{recptnDt}, #{arvlMsg2})
+	</insert>
+	<delete id="subwayDelete" parameterType="com.kang.subwayAlarm.subway.Subway">
+		delete from sub_Info
+	</delete>
+	<select id="searchCount" parameterType="com.kang.subwayAlarm.subway.SubWaySelector"
+		resultType="java.lang.Integer">
+		select count(*) from sub_Info 
+		where (btrainSttus like '%'||#{search}||'%' or arvlMsg2 like '%'||#{search}||'%')
+	</select>
+	<select id="getSearch"
+		parameterType="com.kang.subwayAlarm.subway.SubWaySelector"
+		resultType="com.kang.subwayAlarm.subway.Subway">
+		select * from (
+			select rownum as rn, btrainNo, statnNm, trnsitCo, btrainSttus, barvlDt, bstatnNm, recptnDt, arvlMsg2
+			from ( select * from sub_Info
+				where (btrainSttus like '%'||#{search}||'%'
+				or arvlMsg2 like '%'||#{search}||'%')
+				order by recptnDt desc
+			)
+		)
+		where rn &gt;= #{start} and rn &lt;= #{end}
+	</select>
+</mapper>

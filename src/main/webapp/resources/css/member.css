@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+#memberLoginTbl input{
+	font-family: "d";
+	border-radius: 5px;
+	background-color: pink;
+}
+
+#memberLoginTbl button{
+	font-family: "a";
+	border-radius: 10px;
+	border: none;
+	background-color: green;
+}
+
+#memberSignTbl input{
+	font-family: "d";
+	border-radius: 5px;
+	border: none;
+	background-color:transparent;
+}
+
+.role{
+	font-family: "d";
+	background-color: transparent;	
+}
+
+#memberSignTbl{
+	border-width: 100px;
+	background-color: #FAF4C0;
+	background-size: cover;
+	width: 700px;
+	height: 700px;
+}
+
+#memberSignTbl button{
+	font-family: "a";
+	border-radius: 10px;
+	border: none;
+	background-color: #FFD8D8;
+	width: 100px;
+	height: 30px;
+}
+
+#memberSignTbl th{
+	font-family: "c";
+}
+
+#memberLoginSuccessTbl{
+	font-family: "d";
+}
+	
+#memberLoginSuccessTbl button{
+	font-family: "a";
+	border-radius: 10px;
+	border: none;
+	background-color: green;
+}
+
+#memberInfoTbl{
+	border-width: 100px;
+	background-color: #FAF4C0;
+	background-size: cover;
+	width: 700px;
+	height: 700px;
+}
+
+#memberInfoTbl input{
+	font-family: "d";
+	border-radius: 5px;
+	border: none;
+	background-color:transparent;
+}
+
+input[type=file]::file-selector-button {
+	font-family: "d";
+  	background: #B5B2FF;
+  	border: 1px solid rgb(77,77,77);
+  	border-radius: 10px;
+  	cursor: pointer;
+  	&:hover {
+    background: rgb(77,77,77);
+    color: #fff;
+  	}
+}
+
+#memberInfoTbl button{
+	font-family: "a";
+	border-radius: 10px;
+	border: none;
+	background-color: #FFD8D8;
+	width: 100px;
+	height: 30px;
+}
+
+#memberInfoTbl th{
+	font-family: "c";
+}
+
+#memberInfoTbl td{
+	font-family: "a";
+}

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: "a";
+	src: url("a.TTF");
+}
+
+@font-face {
+	font-family: "c";
+	src: url("c.TTF");
+}
+
+@font-face {
+	font-family: "d";
+	src: url("d.ttf");
+}
+
+@font-face {
+	font-family: "Jua-Regular";
+	src: url("Jua-Regular.ttf");
+}
+
+body {
+  background-color: #D1B2FF;
+}
+
+#logo{
+	margin:20px 0 0 0;
+    float:left;
+}
+
+#siteMenuTbl{
+	font-family: "Jua-Regular";
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 30pt;
+}
+
+#siteMenuTbl a{
+	text-decoration: none;	
+}
+
+#siteLoginTbl{
+	border: 2px solid;
+	border-radius: 5px;
+	margin-left: auto;
+}
+
+#r{
+	color: red;
+	font-family: "b";
+	font-weight: 900;
+	text-shadow: white 2px 2px 2px;
+}
+
+#siteContentTbl{
+	margin: auto;
+}

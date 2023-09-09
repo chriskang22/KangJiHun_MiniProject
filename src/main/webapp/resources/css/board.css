@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+#boardH1{
+	text-align: center;
+	font-family: "Jua-Regular";
+}	
+
+#boardSearchTbl{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#boardSearchTbl input{
+	border: 1px;
+	border-radius: 5px;
+	background-color: pink; 
+	font-family: "a";
+}
+
+#boardSearchTbl button{
+	background-color: #E5D85C;
+	border-radius: 10px;
+	border: 1px;
+	font-family: "a";
+}
+
+#boardlt {
+	position: fixed;
+	left: 0px;
+	top: 500px;
+	width: 50px;
+	height: 50px;
+	color: white;
+	font-size: 100pt;
+	cursor: pointer;
+}
+
+#boardgt {
+	position: fixed;
+	right: 0px;
+	top: 500px;
+	width: 50px;
+	height: 50px;
+	color: white;
+	font-size: 100pt;
+	cursor: pointer;
+}
+
+#boardListTbl{
+	text-align: center;
+	border: 3px;
+	border-radius: 13px; 
+}
+
+#boardListTbl th{
+	background-color: #F361A6;
+	font-size: 20pt;
+	font-family: "c";
+}
+
+#boardListTbl td{
+	background-color: #B2EBF4;
+	font-family: "d";
+}
+
+#boardListTbl div{
+	color: blue;
+}
+
+#boardWriteGOTbl button{
+	font-size: 25px;
+	font-family: "a";
+	background-color: #EAEAEA;
+	border-radius: 15px;
+	border: none;
+}
+
+#regBoardTbl{
+	border-radius: 5px;
+	background-color: #CEF279;
+}
+
+#regBoardTbl th{
+	font-family: "d";
+	font-size: 30px;
+}
+
+#regBoardTbl td{
+	font-family: "a";
+}
+
+#regBoardTbl input{
+	background-color: transparent;
+	border: transparent;
+	font-family: "a";
+}
+
+#regBoardTbl textarea{
+	background-color: transparent;
+	border: transparent;
+	font-family: "a";
+}
+
+#regBoardTbl button{
+	font-family: "c";
+	border-radius: 10px;
+	border: none;
+	font-size: 20px; 
+	background-color: teal;
+}
+
+#boardDetailTbl th{
+	font-family: "d";
+	font-size: 30px;
+}
+
+#boardDetailTbl{
+	background-color: pink;
+	border-radius: 10px;
+	border: solid 1px; 
+}
+
+#boardDetailTbl td{
+	font-family: "a";
+}
+
+#boardDetailTbl input{
+	background-color: transparent;
+	border: transparent;
+	font-family: "a";
+}
+
+#boardDetailTbl textarea{
+	background-color: transparent;
+	border: transparent;
+	font-family: "a";
+}
+
+#boardDetailTbl button{
+	font-family: "c";
+	font-size: 20px;
+	border-radius: 10px;
+	border: none;
+	background-color: #FFA7A7;
+}
+
+#regReplyTbl{
+	background-color: #D4F4FA;
+	border: solid 1px;
+	border-radius: 10px; 	
+}
+
+#regReplyTbl td{
+	font-family: "a";
+}
+
+#regReplyTbl textarea{
+	background-color: transparent;
+	border: transparent;
+	font-family: "a";
+}
+
+#regReplyTbl button{
+	font-family: "c";
+	font-size: 20px;
+	border-radius: 10px;
+	border: none;
+	background-color: #997000;
+}
+
+#replyListTbl{
+	border-radius: 10px;
+	background-color: #FFBB00; 	
+	font-family: "d";
+	width: 635px;
+	height: 100px;
+} 
+
+#replyListTbl button{
+	border-radius: 10px;
+	background-color: green; 
+	border: none;
+}
